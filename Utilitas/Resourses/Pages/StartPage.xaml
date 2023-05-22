@@ -61,7 +61,7 @@
                         Header="Название" Width="65"
                         Binding="{Binding Name}"/>
                     <DataGridTextColumn
-                        Header="Доход" Width="48"
+                        Header="Убыток" Width="50"
                         Binding="{Binding Profit_crisis}"/>
                     <DataGridTextColumn
                         Header="Себестоимость" Width="100"
