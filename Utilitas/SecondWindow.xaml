@@ -1,0 +1,43 @@
+﻿<Window x:Class="Utilitas.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Utilitas"
+        mc:Ignorable="d"
+        Title="SecondWindow" Height="340" Width="500" WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="SecondWindow_moving">
+    <Grid>
+        <StackPanel Height="47" Background="#142942" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500">
+            <TextBlock Height="70"
+                       Width="400"
+                       Text="Utilitas"
+                       FontSize="55"
+                       Foreground="AliceBlue"
+                       FontWeight="Heavy"
+                       FontStyle="Italic"
+                       TextAlignment="Center"
+                       Margin="0,-17,0,0"/>
+            <Button Height="48" Width="48" Margin="450,-60,0,0" Background="#142942" Style="{StaticResource RoundButtonTemplate}" Click="Close_Click">
+                <Image Source="/Resourses/Images/close.png" Height="48" Width="48"/>
+            </Button>
+            <Button Height="48" Width="48" Margin="370,-55,0,0" Background="#142942" Style="{StaticResource RoundButtonTemplate}" Click="RollUp_Click">
+                <Image Source="/Resourses/Images/rollup.png" Height="34" Width="34"/>
+            </Button>
+        </StackPanel>
+        <StackPanel Height="293" Margin="0,47,0,0" Width="500" Background="WhiteSmoke">
+            <TextBlock Width="100" Height="50" Margin="0,30,200,0" Foreground="Black" Text="Номер:" TextAlignment="Center" FontSize="20" FontWeight="Heavy" FontStyle="Italic"/>
+            <TextBox Text="Введите номер изделия" Foreground="Gray"  FontSize="15" FontWeight="Medium" GotFocus="Number_TextBox" Name="Txb_Number" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="30" BorderBrush="Black" BorderThickness="3" Margin="150,-70,0,0" Background="White"/>
+            <TextBlock Width="110" Height="50" Margin="0,0,230,0" Foreground="Black" Text="Название:" TextAlignment="Center" FontSize="20" FontWeight="Heavy" FontStyle="Italic"/>
+            <TextBox Text="Введите название изделия" Foreground="Gray"  FontSize="15" FontWeight="Medium" GotFocus="Name_TextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="30" BorderBrush="Black" BorderThickness="3" Margin="150,-70,0,0" Background="White" Name="Txb_Name"/>
+            <TextBlock Width="180" Height="50" Margin="0,0,290,0" Foreground="Black" Text="Себестоимость:" FontSize="20" FontWeight="Heavy" FontStyle="Italic"/>
+            <TextBox Text="Введите себестоимость изделия" Foreground="Gray"  FontSize="15" FontWeight="Medium" GotFocus="Cost_Price_TextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="30" BorderBrush="Black" BorderThickness="3" Margin="150,-70,0,0" Background="White" Name="Txb_CPrice"/>
+            <TextBlock Width="100" Height="50" Margin="0,0,190,0" Foreground="Black" Text="Цена:" TextAlignment="Center" FontSize="20" FontWeight="Heavy" FontStyle="Italic"/>
+            <TextBox Text="Введите цену изделия" Foreground="Gray"  FontSize="15" FontWeight="Medium" GotFocus="Price_TextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="30" BorderBrush="Black" BorderThickness="3" Margin="150,-70,0,0" Background="White" Name="Txb_Price"/>
+            <Button Click="AddText_Click" Name="AddTextClick" Height="40" Width="150" Style="{StaticResource RoundButtonTemplate2}" Content="Добавить" FontSize="25" FontWeight="Medium" Foreground="Black" FontStyle="Italic"/> 
+        </StackPanel>
+
+
+    </Grid>
+</Window>

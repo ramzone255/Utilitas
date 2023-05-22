@@ -1,0 +1,110 @@
+﻿<Page x:Class="Utilitas.Resourses.Pages.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Utilitas.Resourses.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="402" d:DesignWidth="700"
+      Title="StartPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Height="202" Margin="0,0,0,200" Grid.Column="0" Background="WhiteSmoke">
+            <TextBlock Height="30" Text="Profit" TextAlignment="Center" FontSize="25" Foreground="Black" FontWeight="Medium" FontStyle="Italic"/>
+            <Image Source="/Resourses/Images/Profit.png" Height="80" Width="80"/>
+            <DataGrid Name="DtgListProfit"
+                      IsReadOnly="True"
+                      Margin="0,5,0,0"
+                      Width="255"
+                      Height="80"
+                      Foreground="Black"
+                      Background="White"
+                      AutoGenerateColumns="False"
+                      VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Header="Номер" Width="48"
+                        Binding="{Binding Number}"/>
+                    <DataGridTextColumn
+                        Header="Название" Width="65"
+                        Binding="{Binding Name}"/>
+                    <DataGridTextColumn
+                        Header="Доход" Width="48"
+                        Binding="{Binding Profit_crisis}"/>
+                    <DataGridTextColumn
+                        Header="Себестоимость" Width="100"
+                        Binding="{Binding Cost_Price}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Height="202" Margin="0,202,0,0" Grid.Column="0" Background="WhiteSmoke">
+            <TextBlock Height="30" Text="Crisis" TextAlignment="Center" FontSize="25" Foreground="Black" FontWeight="Medium" FontStyle="Italic"/>
+            <Image Source="/Resourses/Images/Crisis.png" Height="80" Width="80"/>
+            <DataGrid Name="DtgListCrisis"
+                      IsReadOnly="True"
+                      Margin="0,5,0,0"
+                      Width="255"
+                      Height="80"
+                      Foreground="Black"
+                      Background="White"
+                      AutoGenerateColumns="False"
+                      VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Header="Номер" Width="48"
+                        Binding="{Binding Number}" x:Name="f"/>
+                    <DataGridTextColumn
+                        Header="Название" Width="65"
+                        Binding="{Binding Name}"/>
+                    <DataGridTextColumn
+                        Header="Доход" Width="48"
+                        Binding="{Binding Profit_crisis}"/>
+                    <DataGridTextColumn
+                        Header="Себестоимость" Width="100"
+                        Binding="{Binding Cost_Price}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Background="WhiteSmoke">
+            <DataGrid Name="DtgListBooks"
+                      IsReadOnly="True"
+                      Margin="0,10,0,0"
+                      Width="408"
+                      Height="330"
+                      Foreground="Black"
+                      Background="White"
+                      AutoGenerateColumns="False"
+                      VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                        <DataGridTextColumn
+                        Header="Номер" Width="100"
+                        Binding="{Binding Number}"/>
+                        <DataGridTextColumn
+                        Header="Название" Width="100"
+                        Binding="{Binding Name}"/>
+                        <DataGridTextColumn
+                        Header="Себестоимость" Width="100"
+                        Binding="{Binding Cost_Price}"/>
+                        <DataGridTextColumn
+                        Header="Цена" Width="100"
+                        Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            <Button x:Name="BtnRe" Content="Обновить"
+                    Width="80"
+                    Height="20"
+                    Style="{StaticResource RoundButtonTemplate2}"
+                    Background="White"
+                    Foreground="Black"
+                    FontWeight="Medium"
+                    FontStyle="Italic"
+                    Margin="0,20,0,0"
+                    Click="Re_Click"/>
+            </StackPanel>
+    </Grid>
+</Page>
