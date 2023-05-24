@@ -33,8 +33,9 @@ namespace Utilitas.Resourses.Pages
         {
             CollectionViewSource.GetDefaultView(DtgListBooks.ItemsSource).Refresh();
             DtgListBooks.ItemsSource = ClassHelp.libraries.OrderByDescending(x => x.Cost_Price).ToList();
-            DtgListProfit.ItemsSource = ClassHelp.libraries.Where(x => x.Profit_crisis > 0);
-            DtgListCrisis.ItemsSource = ClassHelp.libraries.Where(x => x.Profit_crisis < 0);
+            DtgListProfit.ItemsSource = ClassHelp.libraries.Where(x => x.Profit_crisis > 0).OrderByDescending(x => x.Cost_Price).ToList();
+            DtgListCrisis.ItemsSource = ClassHelp.libraries.Where(x => x.Profit_crisis < 0).OrderByDescending(x => x.Cost_Price).ToList();
+
         }
 
     }
